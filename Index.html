@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanupriya Chachondia — Product Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C2430;
+    --ink-soft:#2A3442;
+    --paper:#F0ECDF;
+    --paper-hi:#F8F5EC;
+    --brass:#B8923D;
+    --brass-deep:#8F6E28;
+    --teal:#2F5D62;
+    --teal-soft:#436E72;
+    --charcoal:#23262B;
+    --rule:#C9C2AE;
+    --rule-dark:#3C4655;
+    --max:1040px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---------- HERO / STATEMENT HEADER ---------- */
+  .hero{
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 43px,
+        rgba(255,255,255,0.045) 43px,
+        rgba(255,255,255,0.045) 44px
+      ),
+      var(--ink);
+    color:var(--paper-hi);
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-60px; top:-60px;
+    width:280px; height:280px;
+    border:1px solid rgba(184,146,61,0.35);
+    border-radius:50%;
+  }
+  .statement-no{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 22px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .statement-no span{opacity:0.85;}
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(38px, 6vw, 64px);
+    line-height:1.03;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .title-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#C9D6D6;
+    margin:0 0 26px;
+  }
+  .thesis{
+    font-size:clamp(17px, 2vw, 20px);
+    max-width:620px;
+    color:#DCD8CB;
+    margin:0 0 30px;
+  }
+  .hero-meta{
+    display:flex; gap:28px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:#A9B3BE;
+    border-top:1px solid rgba(255,255,255,0.15);
+    padding-top:18px;
+  }
+  .hero-meta div span{display:block; color:var(--brass); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:56px 0;}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    margin:0 0 8px;
+  }
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(26px,3.4vw,34px);
+    margin:0 0 34px;
+    color:var(--ink);
+  }
+  hr.ledger{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:0 0 36px;
+  }
+
+  /* ---------- CASE FILES ---------- */
+  .case{
+    background:var(--paper-hi);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:36px clamp(20px,4vw,44px);
+    margin-bottom:32px;
+    position:relative;
+  }
+  .case-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+  }
+  .file-no{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--teal);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .case h3{
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .case .org{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--charcoal);
+    opacity:0.7;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    border:1.5px solid var(--brass-deep);
+    border-radius:3px;
+    padding:8px 12px;
+    transform:rotate(-2.5deg);
+    white-space:nowrap;
+    background:rgba(184,146,61,0.06);
+  }
+  .case-grid{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:10px 18px;
+    margin-top:22px;
+  }
+  .case-grid .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--teal-soft);
+    padding-top:2px;
+  }
+  .case-grid .v{font-size:15.5px;}
+  .case-grid .v:not(:last-child){padding-bottom:14px; border-bottom:1px solid var(--rule); margin-bottom:0;}
+  .tech-row{
+    margin-top:22px;
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .tech-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    padding:5px 10px;
+    background:var(--ink);
+    color:var(--paper-hi);
+    border-radius:2px;
+    letter-spacing:0.03em;
+  }
+  .problem-quote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ink-soft);
+    border-left:3px solid var(--brass);
+    padding:4px 0 4px 18px;
+    margin:0 0 20px;
+  }
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--rule);
+    margin:26px 0;
+    border:1px solid var(--rule);
+  }
+  .stat-cell{
+    background:var(--paper-hi);
+    padding:16px 14px;
+    text-align:center;
+  }
+  .stat-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:20px;
+    color:var(--teal);
+    display:block;
+    margin-bottom:4px;
+  }
+  .stat-label{
+    font-size:11px;
+    letter-spacing:0.03em;
+    color:var(--charcoal);
+    opacity:0.75;
+  }
+  @media (max-width:560px){ .stat-grid{grid-template-columns:repeat(2,1fr);} }
+  .results-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+    margin-top:8px;
+  }
+  @media (max-width:640px){ .results-cols{grid-template-columns:1fr;} }
+  .results-cols h5{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--teal-soft);
+    margin:0 0 10px;
+  }
+  .check-list{list-style:none; margin:0; padding:0;}
+  .check-list li{
+    font-size:14px;
+    padding:6px 0 6px 22px;
+    position:relative;
+    border-bottom:1px solid var(--rule);
+  }
+  .check-list li:last-child{border-bottom:none;}
+  .check-list li::before{
+    content:"✓";
+    position:absolute; left:0; top:6px;
+    color:var(--brass-deep);
+    font-weight:600;
+  }
+  .skills-demo{
+    margin-top:22px;
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .skills-demo .chip{
+    background:transparent;
+    border:1px solid var(--teal-soft);
+    color:var(--teal);
+    font-size:12px;
+    padding:5px 11px;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:640px){ .skills-cols{grid-template-columns:1fr;} }
+  .skill-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 14px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--brass);
+  }
+  .chip-set{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:13.5px;
+    padding:7px 13px;
+    border:1px solid var(--rule-dark);
+    color:var(--ink);
+    border-radius:20px;
+    background:var(--paper-hi);
+  }
+
+  /* ---------- TIMELINE (LEDGER) ---------- */
+  .ledger-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:18px;
+    padding:16px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:baseline;
+  }
+  .ledger-row:first-child{border-top:1px solid var(--rule);}
+  .ledger-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--teal);
+    letter-spacing:0.03em;
+  }
+  .ledger-role{font-weight:600; font-size:16px; color:var(--ink);}
+  .ledger-org{font-size:14px; opacity:0.75;}
+
+  /* ---------- CERTS ---------- */
+  .cert-strip{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .cert{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    padding:9px 14px;
+    border:1px dashed var(--brass-deep);
+    color:var(--brass-deep);
+    border-radius:3px;
+  }
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--paper-hi);
+    padding:52px 0 40px;
+  }
+  footer .section-label{color:var(--brass);}
+  footer h2.section-title{color:var(--paper-hi);}
+  .contact-grid{
+    display:flex; flex-wrap:wrap; gap:14px;
+    margin-top:22px;
+  }
+  .contact-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:11px 18px;
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:2px;
+    color:var(--paper-hi);
+    text-decoration:none;
+  }
+  .contact-chip:hover{border-color:var(--brass); color:var(--brass);}
+  .foot-note{
+    margin-top:34px;
+    font-size:12px;
+    color:#8B94A0;
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:18px;
+  }
+
+  @media (max-width:560px){
+    .case-grid{grid-template-columns:1fr;}
+    .case-grid .k{padding-top:0;}
+    .ledger-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="statement-no"><span>Statement No. PM-2026-01</span><span>Prepared for: Hiring Partners</span></p>
+    <h1 class="name">Kanupriya Chachondia</h1>
+    <p class="title-line">Senior Product Manager · AI Communications &amp; Digital Banking</p>
+    <p class="thesis">I turn regulatory complexity into shipped product — AI-driven customer communications, CRM modernization, and data platforms built for financial services, with compliance designed in from day one, not bolted on after.</p>
+    <div class="hero-meta">
+      <div><span>Based in</span>Mason, OH · Open to onsite / hybrid / relocation</div>
+      <div><span>Focus areas</span>AI Product, Digital Banking, CRM, Data Platforms</div>
+      <div><span>Experience</span>10+ years, financial services &amp; regulated industries</div>
+    </div>
+  </div>
+</header>
+
+<section id="impact" style="padding:0;">
+  <div class="wrap" style="padding-top:0;">
+    <div class="stat-grid" style="margin-top:-1px; transform:translateY(-1px);">
+      <div class="stat-cell"><span class="stat-num">+30%</span><span class="stat-label">Operational efficiency, zero-to-one SMS product</span></div>
+      <div class="stat-cell"><span class="stat-num">+15%</span><span class="stat-label">Customer engagement, same launch</span></div>
+      <div class="stat-cell"><span class="stat-num">10+</span><span class="stat-label">Reusable Salesforce CRM packages shipped</span></div>
+      <div class="stat-cell"><span class="stat-num">+25%</span><span class="stat-label">Campaign performance, branch personalization</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="case-studies">
+  <div class="wrap">
+    <p class="section-label">Case Files</p>
+    <h2 class="section-title">Selected Product Work</h2>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="file-no">File No. 01 — Data &amp; Growth Platform · 2023–2024</p>
+          <h3>Hyperlocal Geo-Targeting Platform</h3>
+          <p class="org">Vericast · Senior Product Owner</p>
+        </div>
+        <div class="stamp">GLBA · FCRA · TCPA Compliant</div>
+      </div>
+
+      <p class="problem-quote">"Financial institution clients had no visibility into which branches needed which products — marketing was one-size-fits-all and spend was wasted on wrong audiences."</p>
+
+      <div class="case-grid">
+        <div class="k">Problem</div>
+        <div class="v">Bank and credit union clients ran identical campaigns across every branch, with no way to tie digital ad spend to local product opportunity. GA4 data sat unused in BigQuery, account holder and loan data were locked in CRM, and Meta audience data was disconnected from branch geography — leaving marketing ROI unmeasurable at the branch level.</div>
+        <div class="k">My Role</div>
+        <div class="v">Owned the end-to-end product and data pipeline — defined branch-level targeting logic, HCMA validation and segmentation rules, and the print-vs-digital media allocation model, while overseeing the engineering build and campaign execution across print, social, and digital channels.</div>
+        <div class="k">Solution</div>
+        <div class="v">Designed and shipped a 6-stage data pipeline: (1) ingested GA4 web data via BigQuery, account holder data, loan application data, and Facebook/Meta API audience data into one pipeline, (2) loaded that data into HCMA — the internal campaign management platform — to validate accuracy, completeness, and compliance, and segment audiences by business rule, (3) loaded validated, segmented data from HCMA into a Lakehouse as the single source of truth by branch, (4) connected Tableau to the Lakehouse to build branch-level opportunity-score reports, layering in Narrative BI and Storydoc for client-facing storytelling, (5) built a media allocation model splitting print vs. social vs. digital spend by branch and product opportunity, and (6) executed the campaigns: customized carousel ads on Meta, plus coordinated print and social creative per branch.</div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-cell"><span class="stat-num">+25%</span><span class="stat-label">Campaign performance improvement</span></div>
+        <div class="stat-cell"><span class="stat-num">4 sources</span><span class="stat-label">GA4, account, loan &amp; Meta data unified</span></div>
+        <div class="stat-cell"><span class="stat-num">Days → Hours</span><span class="stat-label">Reporting prep time</span></div>
+        <div class="stat-cell"><span class="stat-num">100%</span><span class="stat-label">GLBA/TCPA compliant campaigns</span></div>
+      </div>
+
+      <div class="results-cols">
+        <div>
+          <h5>Campaign Performance</h5>
+          <ul class="check-list">
+            <li>Eliminated wasted spend on branches with low product opportunity scores</li>
+            <li>Branch-by-branch, product-by-product targeting replaced one-size-fits-all campaigns</li>
+            <li>Carousel ad engagement exceeded industry benchmark for financial services</li>
+            <li>Clients gained branch-by-branch ROI visibility for the first time</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Operational &amp; Data Impact</h5>
+          <ul class="check-list">
+            <li>Built the first automated GA4 → HCMA → Lakehouse → Tableau pipeline</li>
+            <li>Tableau + Narrative BI/Storydoc replaced manual Excel reporting with real-time, client-ready dashboards</li>
+            <li>HCMA validation automated a previously manual compliance and audience-segmentation process</li>
+            <li>Pipeline template adopted for future financial institution clients</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tech-row">
+        <span class="tech-chip">GA4</span>
+        <span class="tech-chip">BigQuery</span>
+        <span class="tech-chip">HCMA</span>
+        <span class="tech-chip">Lakehouse</span>
+        <span class="tech-chip">Tableau</span>
+        <span class="tech-chip">Narrative BI / Storydoc</span>
+        <span class="tech-chip">Meta API</span>
+      </div>
+      <div class="skills-demo">
+        <span class="chip">Data Pipeline Engineering</span>
+        <span class="chip">Product Strategy</span>
+        <span class="chip">Campaign Execution</span>
+        <span class="chip">Compliance &amp; Risk</span>
+        <span class="chip">Client-Facing Reporting</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="file-no">File No. 02 — Conversational AI · 2024–2025</p>
+          <h3>AI-Powered Mortgage Debt Collection Chatbot</h3>
+          <p class="org">U.S. Bank · Product Manager</p>
+        </div>
+        <div class="stamp">TCPA · FDCPA · CFPB +4 More</div>
+      </div>
+
+      <p class="problem-quote">"US Bank's mortgage collections relied entirely on outbound phone calls — low answer rates, high cost, limited hours, and zero self-service for borrowers who wanted to resolve on their own terms."</p>
+
+      <div class="case-grid">
+        <div class="k">Problem</div>
+        <div class="v">Phone answer rates were declining, agents were spending time on admin work instead of high-value conversations, and borrowers had no self-service option outside business hours. Compliance was equally fragile: manual agent processes led to inconsistent TCPA/FDCPA adherence, opt-out tracking was manual, and audit trails were incomplete.</div>
+        <div class="k">My Role</div>
+        <div class="v">Owned the product definition, compliance framework, and delivery oversight for the AI chatbot from concept through deployment — the bridge between business objectives, the AWS technical architecture, regulatory requirements, and US Bank's operational teams.</div>
+        <div class="k">Solution</div>
+        <div class="v">Designed an AI-powered SMS chatbot on AWS Lex, Pinpoint, Lambda, and DynamoDB, spanning 5 self-service flows (balance/status, payment plan setup, one-time payment, hardship deferral, live agent escalation). Built a TCPA compliance engine with pre-send consent checks, ZIP-to-timezone quiet-hours enforcement, and opt-out sync to DynamoDB. Added 2-factor SMS identity verification, 6 automated human-escalation triggers, an immutable S3 WORM + CloudTrail audit trail with 7-year retention, and Lex guardrails bounded to 5 intents so the bot could never make legal threats or override a compliance flag.</div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-cell"><span class="stat-num">+30%</span><span class="stat-label">Operational efficiency</span></div>
+        <div class="stat-cell"><span class="stat-num">+15%</span><span class="stat-label">Customer engagement</span></div>
+        <div class="stat-cell"><span class="stat-num">24/7</span><span class="stat-label">Borrower self-service availability</span></div>
+        <div class="stat-cell"><span class="stat-num">7 laws</span><span class="stat-label">Regulatory frameworks built in</span></div>
+      </div>
+
+      <div class="results-cols">
+        <div>
+          <h5>Collections &amp; Business Impact</h5>
+          <ul class="check-list">
+            <li>Enabled 24/7 borrower engagement with no agent needed for routine resolution</li>
+            <li>Shifted first-touch delinquency contact from phone to lower-cost SMS</li>
+            <li>Borrowers set up payment plans and pay without a live agent</li>
+            <li>Hardship requests triaged automatically — only complex cases reach specialists</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Compliance &amp; Risk Impact</h5>
+          <ul class="check-list">
+            <li>100% TCPA consent verification before every outbound SMS</li>
+            <li>Automated quiet-hours enforcement — no time-zone errors possible</li>
+            <li>FDCPA cease-communication flags enforced in real time via DynamoDB</li>
+            <li>Immutable, exam-ready audit log created for every interaction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tech-row">
+        <span class="tech-chip">AWS Lex</span>
+        <span class="tech-chip">Pinpoint</span>
+        <span class="tech-chip">Lambda</span>
+        <span class="tech-chip">DynamoDB</span>
+        <span class="tech-chip">S3 (WORM)</span>
+        <span class="tech-chip">CloudTrail</span>
+      </div>
+      <div class="skills-demo">
+        <span class="chip">AI / Conversational Product Design</span>
+        <span class="chip">AWS Cloud Architecture</span>
+        <span class="chip">Regulatory Compliance (7)</span>
+        <span class="chip">Risk &amp; Governance</span>
+        <span class="chip">Cross-Functional Leadership</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="section-label">Core Competencies</p>
+    <h2 class="section-title">Skills &amp; Domain Depth</h2>
+    <hr class="ledger">
+    <div class="skills-cols">
+      <div class="skill-col">
+        <h4>Product Management</h4>
+        <div class="chip-set">
+          <span class="chip">Product Strategy</span>
+          <span class="chip">Roadmapping</span>
+          <span class="chip">Stakeholder Alignment</span>
+          <span class="chip">AI/ML Product Design</span>
+          <span class="chip">Data-Informed Prioritization</span>
+          <span class="chip">SAFe / Agile at Scale</span>
+        </div>
+      </div>
+      <div class="skill-col">
+        <h4>Product Ownership</h4>
+        <div class="chip-set">
+          <span class="chip">Backlog Management</span>
+          <span class="chip">User Story Writing</span>
+          <span class="chip">Salesforce CRM</span>
+          <span class="chip">RPA (UiPath)</span>
+          <span class="chip">Sprint Planning</span>
+          <span class="chip">Cross-Functional Delivery</span>
+        </div>
+      </div>
+    </div>
+    <div class="skill-col" style="margin-top:28px;">
+      <h4>Regulatory &amp; Compliance Fluency</h4>
+      <div class="chip-set">
+        <span class="chip">TCPA</span>
+        <span class="chip">FDCPA</span>
+        <span class="chip">CFPB</span>
+        <span class="chip">GLBA</span>
+        <span class="chip">FCRA</span>
+        <span class="chip">CCPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="section-label">Ledger</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="ledger-row">
+      <div class="ledger-date">Jun 2025 – Feb 2026</div>
+      <div><div class="ledger-role">Senior Product Owner</div><div class="ledger-org">Vericast</div></div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-date">Sep 2023 – Mar 2025</div>
+      <div><div class="ledger-role">Product Manager</div><div class="ledger-org">U.S. Bank</div></div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-date">Apr 2020 – Jun 2023</div>
+      <div><div class="ledger-role">Product Owner</div><div class="ledger-org">Wells Fargo</div></div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-date">Nov 2018 – Mar 2020</div>
+      <div><div class="ledger-role">Product Owner</div><div class="ledger-org">KeyBank</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-strip">
+      <span class="cert">CSPO — Certified Scrum Product Owner</span>
+      <span class="cert">SAFe PO/PM</span>
+      <span class="cert">SAFe Agilist</span>
+      <span class="cert">PSM I</span>
+      <span class="cert">AI Product Owner — Scrum Alliance</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <a class="contact-chip" href="mailto:c.kanupriyaa@gmail.com">c.kanupriyaa@gmail.com</a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/kanupriyac" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="contact-chip" href="tel:+15138936188">513-893-6188</a>
+    </div>
+    <p class="foot-note">Mason, Ohio · Open to onsite, hybrid, Mon–Thu travel, relocation, and remote arrangements.</p>
+  </div>
+</footer>
+
+</body>
+</html>
