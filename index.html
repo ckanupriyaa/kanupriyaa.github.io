@@ -485,66 +485,190 @@
     <div class="case">
       <div class="case-head">
         <div>
-          <p class="file-no">File No. 02 — Conversational AI · 2024–2025</p>
-          <h3>AI-Powered Mortgage Debt Collection Chatbot</h3>
+          <p class="file-no">File No. 02 — Digital Collections &amp; Compliance · 2023–2025</p>
+          <h3>AI-Enabled Two-Way SMS Mortgage Collections Platform</h3>
           <p class="org">U.S. Bank · Product Manager</p>
         </div>
         <div class="stamp">TCPA · FDCPA · CFPB +4 More</div>
       </div>
 
-      <p class="problem-quote">"US Bank's mortgage collections relied entirely on outbound phone calls — low answer rates, high cost, limited hours, and zero self-service for borrowers who wanted to resolve on their own terms."</p>
+      <p class="problem-quote">"Phone-based right-party contact had declined year over year, and borrowers had limited ways to engage with collections outside the traditional call and IVR channels."</p>
 
       <div class="case-grid">
         <div class="k">Problem</div>
-        <div class="v">Phone answer rates were declining, agents were spending time on admin work instead of high-value conversations, and borrowers had no self-service option outside business hours. Compliance was equally fragile: manual agent processes led to inconsistent TCPA/FDCPA adherence, opt-out tracking was manual, and audit trails were incomplete.</div>
+        <div class="v">Mortgage collections relied heavily on outbound phone calls and IVR. Right-party contact by phone had declined roughly 6.15% year over year, borrowers had no asynchronous way to respond, and agents spent time on routine administrative follow-ups instead of complex cases needing real judgment. The bank needed a compliant digital channel — one that handled consent, timing, message status, and jurisdiction-specific rules consistently.</div>
         <div class="k">My Role</div>
-        <div class="v">Owned the product definition, compliance framework, and delivery oversight for the AI chatbot from concept through deployment — the bridge between business objectives, the AWS technical architecture, regulatory requirements, and US Bank's operational teams.</div>
+        <div class="v">Defined the product vision and business case for a two-way SMS channel, owned the roadmap and backlog, and translated borrower journeys into epics, features, user stories, and acceptance criteria. Partnered closely with engineering, mortgage servicing, operations, legal, compliance, and security throughout.</div>
         <div class="k">Solution</div>
-        <div class="v">Designed an AI-powered SMS chatbot on AWS Lex, Pinpoint, Lambda, and DynamoDB, spanning 5 self-service flows (balance/status, payment plan setup, one-time payment, hardship deferral, live agent escalation). Built a TCPA compliance engine with pre-send consent checks, ZIP-to-timezone quiet-hours enforcement, and opt-out sync to DynamoDB. Added 2-factor SMS identity verification, 6 automated human-escalation triggers, an immutable S3 WORM + CloudTrail audit trail with 7-year retention, and Lex guardrails bounded to 5 intents so the bot could never make legal threats or override a compliance flag.</div>
+        <div class="v">Built a two-way SMS platform on AWS Pinpoint (message delivery), integrated via Apigee with CACS (the collections servicing system), Salesforce (CRM/agent visibility), and the existing IVR channel. Delivered five borrower journeys — promise-to-pay, agent connection, callback requests, payment reminders, and missed-promise follow-up — with message-status tracking (sent, delivered, failed) and opt-in/opt-out management. Defined testable compliance requirements for consent, communication timing, and jurisdiction-specific rules across CA, CT, DC, MA, NH, TX, and NYC.</div>
       </div>
 
       <div class="stat-grid">
         <div class="stat-cell"><span class="stat-num">+30%</span><span class="stat-label">Operational efficiency</span></div>
-        <div class="stat-cell"><span class="stat-num">+15%</span><span class="stat-label">Customer engagement</span></div>
-        <div class="stat-cell"><span class="stat-num">24/7</span><span class="stat-label">Borrower self-service availability</span></div>
-        <div class="stat-cell"><span class="stat-num">7 laws</span><span class="stat-label">Regulatory frameworks built in</span></div>
+        <div class="stat-cell"><span class="stat-num">5 journeys</span><span class="stat-label">Borrower self-service flows shipped</span></div>
+        <div class="stat-cell"><span class="stat-num">7 markets</span><span class="stat-label">Jurisdiction-specific rules mapped</span></div>
+        <div class="stat-cell"><span class="stat-num">6.15%</span><span class="stat-label">YoY phone RPC decline that drove the case for this channel</span></div>
       </div>
 
       <div class="results-cols">
         <div>
           <h5>Collections &amp; Business Impact</h5>
           <ul class="check-list">
-            <li>Enabled 24/7 borrower engagement with no agent needed for routine resolution</li>
-            <li>Shifted first-touch delinquency contact from phone to lower-cost SMS</li>
-            <li>Borrowers set up payment plans and pay without a live agent</li>
-            <li>Hardship requests triaged automatically — only complex cases reach specialists</li>
+            <li>Gave borrowers an asynchronous alternative to phone and IVR for routine interactions</li>
+            <li>Reduced agent time on administrative follow-ups, freeing capacity for complex cases</li>
+            <li>Borrowers could make promise-to-pay commitments and request callbacks without waiting on hold</li>
+            <li>Message-status tracking gave the team visibility into delivery, read, and failure rates</li>
           </ul>
         </div>
         <div>
           <h5>Compliance &amp; Risk Impact</h5>
           <ul class="check-list">
-            <li>100% TCPA consent verification before every outbound SMS</li>
-            <li>Automated quiet-hours enforcement — no time-zone errors possible</li>
-            <li>FDCPA cease-communication flags enforced in real time via DynamoDB</li>
-            <li>Immutable, exam-ready audit log created for every interaction</li>
+            <li>Consent and eligibility verified before every outbound message</li>
+            <li>Communication timing and quiet-hours rules mapped across 7 state/city jurisdictions</li>
+            <li>Opt-in and opt-out processing built directly into the borrower journey</li>
+            <li>Defined testable requirements for disclosures, message status, and auditability with legal and compliance</li>
           </ul>
         </div>
       </div>
 
       <div class="tech-row">
-        <span class="tech-chip">AWS Lex</span>
-        <span class="tech-chip">Pinpoint</span>
-        <span class="tech-chip">Lambda</span>
-        <span class="tech-chip">DynamoDB</span>
-        <span class="tech-chip">S3 (WORM)</span>
-        <span class="tech-chip">CloudTrail</span>
+        <span class="tech-chip">AWS Pinpoint</span>
+        <span class="tech-chip">Apigee</span>
+        <span class="tech-chip">CACS</span>
+        <span class="tech-chip">Salesforce</span>
+        <span class="tech-chip">IVR</span>
+        <span class="tech-chip">Jira / Confluence</span>
       </div>
       <div class="skills-demo">
-        <span class="chip">AI / Conversational Product Design</span>
-        <span class="chip">AWS Cloud Architecture</span>
-        <span class="chip">Regulatory Compliance (7)</span>
-        <span class="chip">Risk &amp; Governance</span>
+        <span class="chip">Conversational Product Design</span>
+        <span class="chip">Multi-Jurisdiction Compliance</span>
+        <span class="chip">Cross-System Integration</span>
+        <span class="chip">Business Case Development</span>
         <span class="chip">Cross-Functional Leadership</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="file-no">File No. 03 — Enterprise CRM Modernization · 2020–2023</p>
+          <h3>Salesforce CRM Platform Decomposition</h3>
+          <p class="org">Wells Fargo · Product Owner</p>
+        </div>
+        <div class="stamp">4 Lines of Business</div>
+      </div>
+
+      <p class="problem-quote">"The existing CRM had a monolithic architecture, which made it difficult for different lines of business to customize and release functionality independently."</p>
+
+      <div class="case-grid">
+        <div class="k">Problem</div>
+        <div class="v">Wells Fargo's legacy Salesforce CRM ("CRV") was a monolithic codebase — shared functionality was tightly coupled, so no line of business could customize capabilities, reuse common functionality, or release changes without risking every other business unit's experience. Banker and customer experience grew inconsistent, and the platform couldn't scale.</div>
+        <div class="k">My Role</div>
+        <div class="v">Defined the product vision and multi-quarter modernization strategy, owned and evolved the roadmap, and managed the backlog across multiple Scrum teams. Served as the primary liaison among technology teams, senior business stakeholders, and LOB leaders — influencing senior leadership to align on competing platform priorities.</div>
+        <div class="k">Solution</div>
+        <div class="v">Led the decomposition of the monolith into 10+ modular, reusable Salesforce capability packages — including Customer 360, Customer Search, Financial Accounts, Click-to-Call, Plan My Day, and Referral Management — serving Consumer Banking, Wealth &amp; Investment Management, Home Lending, and Small Business. Established packaging governance covering installation protocols, versioning standards, pilot/validation processes, production-support hierarchy, and rollout procedures, then led pilot strategy, UAT, change management, and production rollout with each LOB's business owners.</div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-cell"><span class="stat-num">10+</span><span class="stat-label">Modular, reusable packages shipped</span></div>
+        <div class="stat-cell"><span class="stat-num">4 LOBs</span><span class="stat-label">Consumer, Wealth, Home Lending, Small Business</span></div>
+        <div class="stat-cell"><span class="stat-num">Multi-year</span><span class="stat-label">Enterprise transformation</span></div>
+        <div class="stat-cell"><span class="stat-num">Multiple</span><span class="stat-label">Scrum teams coordinated</span></div>
+      </div>
+
+      <div class="results-cols">
+        <div>
+          <h5>Platform Impact</h5>
+          <ul class="check-list">
+            <li>Enabled lines of business to consume and extend shared CRM capabilities independently</li>
+            <li>Improved code and capability reuse across business units</li>
+            <li>Supported faster speed-to-market for new CRM functionality</li>
+            <li>Created more consistent banker and customer experiences platform-wide</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Delivery &amp; Governance</h5>
+          <ul class="check-list">
+            <li>Established installation, versioning, pilot, and rollout governance to reduce deployment risk</li>
+            <li>Led PI planning and coordinated dependencies across teams and business units</li>
+            <li>Aligned senior business and technology leaders on competing roadmap priorities</li>
+            <li>Increased platform scalability and operational efficiency enterprise-wide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tech-row">
+        <span class="tech-chip">Salesforce CRM</span>
+        <span class="tech-chip">Modular Packaging</span>
+        <span class="tech-chip">Jira</span>
+        <span class="tech-chip">Confluence</span>
+        <span class="tech-chip">SAFe / PI Planning</span>
+      </div>
+      <div class="skills-demo">
+        <span class="chip">Platform Strategy</span>
+        <span class="chip">Multi-Team Backlog Ownership</span>
+        <span class="chip">Governance &amp; Risk Reduction</span>
+        <span class="chip">Executive Stakeholder Alignment</span>
+        <span class="chip">Pilot &amp; Rollout Management</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="file-no">File No. 04 — Loan Origination Automation · 2018–2020</p>
+          <h3>RPA-Enabled Loan Document Verification (UiPath)</h3>
+          <p class="org">KeyBank · Senior Business Analyst</p>
+        </div>
+        <div class="stamp">Federal &amp; AML Regulations</div>
+      </div>
+
+      <p class="problem-quote">"Manual verification and collation of loan documents was time-consuming and error-prone, slowing loan origination and adding risk across screening, validation, and prequalification."</p>
+
+      <div class="case-grid">
+        <div class="k">Problem</div>
+        <div class="v">Loan origination staff manually verified and collated documents across the Loan Origination System (LOS), a process that was slow, inconsistent, and error-prone across submission, verification, and prequalification — all while needing to stay aligned with federal and AML regulations at every step.</div>
+        <div class="k">My Role</div>
+        <div class="v">Worked as the bridge between the business and the RPA design team — ran discovery and JAD sessions to capture pain points, performed gap analysis against the proposed automated workflow, and translated business requirements into epics and user stories in JIRA alongside the Product Owner.</div>
+        <div class="k">Solution</div>
+        <div class="v">Partnered with RPA design leads to scope a UiPath desktop-automation solution integrated with the LOS via XML/SOAP web services. Documented the future-state process through use case, state, activity, and sequence diagrams and wireframes in Visio, built data mapping and ER diagrams between legacy and new systems, and validated data integrity with SQL queries. The resulting workflow supported underwriting decisions at every stage — origination, screening, validation, and loan management — while reducing manual, error-prone document handling.</div>
+      </div>
+
+      <div class="results-cols">
+        <div>
+          <h5>Process &amp; Risk Impact</h5>
+          <ul class="check-list">
+            <li>Reduced manual effort in loan document verification, collation, and submission</li>
+            <li>Cut human-related errors across the document submission and validation steps</li>
+            <li>Automated end-to-end underwriting support from origination through loan management</li>
+            <li>Kept federal and AML regulatory requirements embedded across every workflow step</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Delivery &amp; Adoption</h5>
+          <ul class="check-list">
+            <li>Ran UAT and user training, and coordinated fixes for defects surfaced during testing</li>
+            <li>Produced system-metric reports comparing old vs. new workflow for stakeholders</li>
+            <li>Supported production issues post-launch, diagnosing root causes from deep system knowledge</li>
+            <li>Maintained documentation and collaboration through Confluence across the project lifecycle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tech-row">
+        <span class="tech-chip">UiPath</span>
+        <span class="tech-chip">LOS Integration</span>
+        <span class="tech-chip">XML / SOAP</span>
+        <span class="tech-chip">SQL</span>
+        <span class="tech-chip">Visio</span>
+        <span class="tech-chip">Jira / Confluence</span>
+      </div>
+      <div class="skills-demo">
+        <span class="chip">RPA Business Analysis</span>
+        <span class="chip">Requirements &amp; Backlog Translation</span>
+        <span class="chip">Data Mapping &amp; QA</span>
+        <span class="chip">UAT &amp; Training</span>
+        <span class="chip">Gap Analysis</span>
       </div>
     </div>
 
@@ -612,7 +736,7 @@
     </div>
     <div class="ledger-row">
       <div class="ledger-date">Nov 2018 – Mar 2020</div>
-      <div><div class="ledger-role">Product Owner</div><div class="ledger-org">KeyBank</div></div>
+      <div><div class="ledger-role">Senior Business Analyst</div><div class="ledger-org">KeyBank</div></div>
     </div>
   </div>
 </section>
